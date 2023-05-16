@@ -1,5 +1,4 @@
 require 'pg_jbuilder/version'
-require 'handlebars'
 require 'pg_jbuilder/railtie' if defined?(Rails)
 
 module PgJbuilder
@@ -69,7 +68,7 @@ module PgJbuilder
 
   def self.handlebars
     unless @handlebars
-      @handlebars = Handlebars::Context.new
+      @handlebars = Handlebars::Engine.new
       @handlebars.register_helper :include do |context,value,options|
         render_helper context, value, options
       end
@@ -105,4 +104,3 @@ module PgJbuilder
     @handlebars
   end
 end
-
