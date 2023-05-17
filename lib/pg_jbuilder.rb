@@ -1,4 +1,5 @@
 require 'pg_jbuilder/version'
+require 'handlebars-engine'
 require 'pg_jbuilder/railtie' if defined?(Rails)
 
 module PgJbuilder
